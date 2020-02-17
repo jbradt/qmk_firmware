@@ -515,6 +515,15 @@ void rgb_matrix_decrease_val(void) {
   eeconfig_update_rgb_matrix();
 }
 
+void rgb_matrix_set_speed(uint8_t speed) {
+  rgb_matrix_config.speed = speed;
+  eeconfig_update_rgb_matrix();
+}
+
+uint8_t rgb_matrix_get_speed(void) {
+  return rgb_matrix_config.speed;
+}
+
 void rgb_matrix_increase_speed(void) {
   rgb_matrix_config.speed = qadd8(rgb_matrix_config.speed, RGB_MATRIX_SPD_STEP);
   eeconfig_update_rgb_matrix();
@@ -558,4 +567,8 @@ void rgb_matrix_sethsv_noeeprom(uint16_t hue, uint8_t sat, uint8_t val) {
   rgb_matrix_config.hsv.v = val;
   if (rgb_matrix_config.hsv.v > RGB_MATRIX_MAXIMUM_BRIGHTNESS)
     rgb_matrix_config.hsv.v = RGB_MATRIX_MAXIMUM_BRIGHTNESS;
+}
+
+HSV rgb_matrix_gethsv(void) {
+    return rgb_matrix_config.hsv;
 }

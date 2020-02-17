@@ -115,6 +115,8 @@ void rgb_matrix_increase_sat(void);
 void rgb_matrix_decrease_sat(void);
 void rgb_matrix_increase_val(void);
 void rgb_matrix_decrease_val(void);
+uint8_t rgb_matrix_get_speed(void);
+void rgb_matrix_set_speed(uint8_t speed);
 void rgb_matrix_increase_speed(void);
 void rgb_matrix_decrease_speed(void);
 led_flags_t rgb_matrix_get_flags(void);
@@ -122,6 +124,7 @@ void rgb_matrix_set_flags(led_flags_t flags);
 void rgb_matrix_mode(uint8_t mode);
 void rgb_matrix_mode_noeeprom(uint8_t mode);
 uint8_t rgb_matrix_get_mode(void);
+HSV rgb_matrix_gethsv(void);
 void rgb_matrix_sethsv(uint16_t hue, uint8_t sat, uint8_t val);
 void rgb_matrix_sethsv_noeeprom(uint16_t hue, uint8_t sat, uint8_t val);
 
